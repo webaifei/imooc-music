@@ -1,7 +1,8 @@
-package com.example.imooc_music;
+package com.example.imooc_music.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.imooc_music.R;
 
 public class MainActivity extends BaseActivity {
 
