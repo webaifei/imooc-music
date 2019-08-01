@@ -9,4 +9,13 @@
         <item name="android:statusBarColor">@color/mainColor</item>
     </style>
 
+    <!--定义全局通用的样式 功能类似前端的class-->
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#ccc</item>
+        <item name="android:layout_marginLeft">@dimen/marginSize</item>
+        <item name="android:layout_marginRight">@dimen/marginSize</item>
+    </style>
+
 </resources>

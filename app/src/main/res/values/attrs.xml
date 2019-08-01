@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="inputView">
+        <!--输入框左侧图标-->
+        <attr name="input_icon" format="reference"></attr>
+        <!--输入框提示语-->
+        <attr name="input_hint" format="string"></attr>
+        <!--是否是密码类型-->
+        <attr name="is_pwd" format="boolean"></attr>
+    </declare-styleable>
+</resources>
