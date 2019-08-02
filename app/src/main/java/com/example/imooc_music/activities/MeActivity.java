@@ -28,7 +28,9 @@ public class MeActivity extends BaseActivity {
         // api
         // 清除本地个人信息缓存
         // 跳转到登录页
-        startActivity(new Intent(this, LoginActivity.class));
-        finish();
+        Intent intent = new Intent(this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+//        finish();
     }
 }

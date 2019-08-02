@@ -1,6 +1,7 @@
 package com.example.imooc_music.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,6 +28,14 @@ public class BaseActivity extends Activity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+//        个人中心导航
+        meIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BaseActivity.this, MeActivity.class));
             }
         });
     }
