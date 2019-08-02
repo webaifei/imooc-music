@@ -8,7 +8,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.text.InputType;
 import android.text.Layout;
+import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -79,8 +81,12 @@ public class InputView extends FrameLayout {
         // 设置属性
         inputIcon.setImageResource(inputIconId);
         input.setHint(inputHintVal);
+        // 设置成密码显示
         input.setInputType(isPwd ? InputType.TYPE_CLASS_TEXT | InputType.TYPE_NUMBER_VARIATION_PASSWORD : InputType.TYPE_CLASS_PHONE);
-
+        // TODO: 确认需要添加此处代码
+        if (isPwd) {
+            input.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        }
         addView(inputView);
         _attrs.recycle();
 
@@ -88,9 +94,10 @@ public class InputView extends FrameLayout {
 
     /**
      * 获取输入框的输入内容
+     *
      * @return
      */
-    public String getInputHintVal() {
+    public String getInputVal() {
         return input.getText().toString().trim();
     }
 }

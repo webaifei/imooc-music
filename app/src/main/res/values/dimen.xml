@@ -2,4 +2,6 @@
 <resources>
     <dimen name="marginSize">16dp</dimen>
     <dimen name="navHeight">56dp</dimen>
+    <dimen name="font18">18sp</dimen>
+    <dimen name="font14">14sp</dimen>
 </resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.MeActivity">
+    <include layout="@layout/navigation_bar"></include>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginSize"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/font14"
+        android:text="用户名："/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/marginSize"
+        android:text="修改密码"
+        android:textSize="@dimen/font14"
+        ></TextView>
+    <Button
+        style="@style/button"
+        android:text="退出"
+        android:layout_marginTop="@dimen/marginSize"
+        android:onClick="logout"
+        />
+</LinearLayout>

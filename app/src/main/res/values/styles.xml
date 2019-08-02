@@ -7,13 +7,38 @@
         <item name="colorPrimaryDark">@color/mainColor</item>
         <!--<item name="colorAccent">@color/colorAccent</item>-->
         <item name="android:statusBarColor">@color/mainColor</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
     </style>
 
+    <!--过场动画-->
+    <style name="AnimationActivity" parent="@android:style/Animation.Activity">
+        <!--打开新路由 进入动画-->
+        <item name="android:activityOpenEnterAnimation">@anim/open_enter</item>
+        <!--打开新路由 退出activity 动画-->
+        <item name="android:activityOpenExitAnimation">@anim/open_exit</item>
+        <!--退出路由 进入activity 动画-->
+        <item name="android:activityCloseEnterAnimation">@anim/close_exit</item>
+        <!--退出路由 退出的activity 动画-->
+        <item name="android:activityCloseExitAnimation">@anim/close_enter</item>
+
+    </style>
     <!--定义全局通用的样式 功能类似前端的class-->
     <style name="line">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">#ccc</item>
+        <item name="android:layout_marginLeft">@dimen/marginSize</item>
+        <item name="android:layout_marginRight">@dimen/marginSize</item>
+    </style>
+
+    <!--登录按钮样式-->
+    <style name="button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/font18</item>
+        <item name="android:background">@drawable/btn_state</item>
         <item name="android:layout_marginLeft">@dimen/marginSize</item>
         <item name="android:layout_marginRight">@dimen/marginSize</item>
     </style>
