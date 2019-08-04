@@ -6,11 +6,20 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.TextureView;
 import android.view.View;
+import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.EncryptUtils;
 import com.blankj.utilcode.util.RegexUtils;
 import com.example.imooc_music.R;
+import com.example.imooc_music.helper.RealmHelper;
+import com.example.imooc_music.models.UserModel;
 import com.example.imooc_music.views.InputView;
+
+import java.util.logging.StreamHandler;
+
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
 
 public class RegistActivity extends BaseActivity {
 
@@ -67,8 +76,22 @@ public class RegistActivity extends BaseActivity {
             return;
         }
         // 接口请求
+        // 保存到realm
+        UserModel user = new UserModel();
+        user.setPhone(phoneNum);
+        user.setPassword(EncryptUtils.encryptMD5ToString(pwd));
+
+        RealmHelper realmHelper = new RealmHelper();
+        RealmQuery<UserModel> query = realmHelper.realm.where(UserModel.class);
+        query.equalTo("phone", user.getPhone());
+        RealmResults<UserModel> results = query.findAll();
+        if(results.size() > 0) {
+            Toast.makeText(this, "该号码已注册", Toast.LENGTH_LONG).show();
+            return;
+        }
+        realmHelper.saveUser(user);
         // 路由跳转
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

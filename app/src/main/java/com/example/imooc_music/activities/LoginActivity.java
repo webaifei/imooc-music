@@ -8,8 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.EncryptUtils;
 import com.blankj.utilcode.util.RegexUtils;
 import com.example.imooc_music.R;
+import com.example.imooc_music.helper.RealmHelper;
+import com.example.imooc_music.models.UserModel;
 import com.example.imooc_music.views.InputView;
 
 public class LoginActivity extends BaseActivity {
@@ -64,6 +67,17 @@ public class LoginActivity extends BaseActivity {
             return;
         }
         // 接口请求
+        // 数据库查询
+        UserModel user = new UserModel();
+        user.setPhone(phoneNum);
+        user.setPassword(EncryptUtils.encryptMD5ToString(pwd));
+
+        RealmHelper realmHelper = new RealmHelper();
+        boolean isLogin = realmHelper.login(user);
+        if(!isLogin) {
+            Toast.makeText(this, "用户或者密码不正确", Toast.LENGTH_SHORT).show();
+            return;
+        }
         // 路由跳转
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

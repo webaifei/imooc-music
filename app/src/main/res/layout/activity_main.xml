@@ -41,6 +41,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             </android.support.v7.widget.RecyclerView>
+            <!--音乐列表标题-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/marginSize"
+                android:layout_marginLeft="@dimen/marginSize"
+                android:layout_marginBottom="@dimen/marginSize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <View
+                    android:background="@color/mainColor"
+                    android:layout_width="4dp"
+                    android:layout_height="22dp"/>
+                <TextView
+                    android:text="音乐列表"
+                    android:textColor="@color/color333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/marginSize"/>
+            </LinearLayout>
+            <!--音乐单曲列表-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ms_music_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

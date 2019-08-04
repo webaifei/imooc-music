@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.example.imooc_music.views.MyImageView
+            android:id="@+id/mu_grid_item_icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"

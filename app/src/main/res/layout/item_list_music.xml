@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@android:color/white"
+    android:padding="@dimen/marginSize"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--icon-->
+    <ImageView
+        android:id="@+id/mu_list_item_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/img1"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/marginSize"
+        android:layout_marginRight="@dimen/marginSize"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <!--title-->
+        <TextView
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="音乐名称"
+            android:textColor="@color/color333"
+            android:textSize="@dimen/font16"
+            android:layout_width="match_parent" />
+        <!--info-->
+        <TextView
+            android:layout_height="wrap_content"
+            android:text="作者"
+            android:textColor="@color/color666"
+            android:textSize="@dimen/font14"
+            android:layout_width="match_parent" />
+
+    </LinearLayout>
+    <!--play icon-->
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/play"/>
+</LinearLayout>

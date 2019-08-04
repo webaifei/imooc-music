@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TypeListActivity">
+    <include layout="@layout/navigation_bar"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/marginSize"
+        android:layout_marginLeft="@dimen/marginSize"
+        android:layout_marginBottom="@dimen/marginSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:background="@color/mainColor"
+            android:layout_width="4dp"
+            android:layout_height="22dp"/>
+        <TextView
+            android:text="专辑列表"
+            android:textColor="@color/color333"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/marginSize"/>
+    </LinearLayout>
+    <!--音乐单曲列表-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ms_album_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
