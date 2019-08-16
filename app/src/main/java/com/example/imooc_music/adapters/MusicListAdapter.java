@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,6 +73,8 @@ public class MusicListAdapter extends RecyclerView.Adapter<ViewHolder> {
         }
         int count = getItemCount();
         int itemHeight = viewItem.getLayoutParams().height;
+        Log.v("imooc", Integer.toString(itemHeight));
+
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) _muList.getLayoutParams();
         layoutParams.height = itemHeight * count;
         _muList.setLayoutParams(layoutParams);
